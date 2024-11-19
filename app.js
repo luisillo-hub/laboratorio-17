@@ -1,5 +1,26 @@
-document.getElementById('form-registro').addEventListener('submit', function (e) {
+const formAdopcion = document.getElementById('form-adopcion');
+if (formAdopcion){
+    formAdopcion.addEventListener('submit', function (e) {
+        e.preventDefault();
+    
+        const nombreAdopcion = document.getElementById('nombreAdopcion').value.trim();
+        const correoAdopcion = document.getElementById('correoAdopcion').value.trim();
+        const descripcionAdopcion = document.getElementById('descripcionAdopcion').value.trim();
+
+        if (!nombreAdopcion || !correoAdopcion || !descripcionAdopcion) {
+            alert('Por favor completa todos los campos.');
+            return;
+        }
+
+        alert('Formulario enviado con éxito. ¡Gracias por tu interés en adoptar!');
+
+    });
+    
+}else{
+const formRegistro = document.getElementById('form-registro');
+formRegistro.addEventListener('submit', function (e) {
     e.preventDefault();
+
     const nombre = document.getElementById('nombre').value.trim();
     const apellido = document.getElementById('apellido').value.trim();
     const telefono = document.getElementById('telefono').value.trim();
@@ -21,4 +42,4 @@ document.getElementById('form-registro').addEventListener('submit', function (e)
     }
 
 alert('Formulario enviado correctamente.');
-});
+});}
