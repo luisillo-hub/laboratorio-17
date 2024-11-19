@@ -1,0 +1,263 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body{
+    background-color: #f3f3f3;
+    color: #333;
+}
+/*barra de navegacion fija*/
+.barra-navegacion{
+position: fixed;
+top: 0;
+width: 100%;
+background-color: #4CAF50;
+padding: 1em 0;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+z-index: 100;
+}
+.menu-navegacion{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+.menu-navegacion a{
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    transition: background-color 0.3s;
+}
+.menu-navegacion a:hover{
+    background-color: #3e8e41;
+    border-radius: 4px;
+}
+/*estilo de submenus*/
+.desplegable{
+    position: relative;
+}
+.sub-menu{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #4caf50;
+    list-style-type: none;
+    padding: 0;
+    min-width: 120px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.sub-menu li{
+    width: 100%;
+}
+.sub-menu li a{
+    display: block;
+    padding: 8px 16px;
+    color: white;
+}
+.sub-menu li a:hover{
+    background-color: #3e8e41;
+}
+.desplegable:hover .sub-menu{
+    display: block;
+}
+/*seccion principal*/
+.principal{
+    margin-top: 100px;
+    text-align: center;
+    padding: 50px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.principal h1{
+    font-size: 2.5em;
+    color: #4CAF50;
+    margin-bottom: 20px;
+    width: 100%;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.contenedor-imagen{
+    max-width: 45%;
+    text-align: center;
+    transition: transform 0.3s;
+}
+.imagen-principal{
+    width: auto;
+    height: 90%;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.imagen-principal:hover{
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+.texto-descriptivo{
+    margin-top: 10px;
+    color: #555;
+    font-size: 1em;
+}
+/*pie de pagina*/
+.pie-pagina{
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+    margin-top: 3rem;
+}
+.contenido-pie{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 0 1rem;
+}
+.seccion-pie h3{
+    color: #4CAF50;
+    margin-bottom: 1rem;
+}
+/*media queries para responsividad
+para tablets y dispositivos medianos*/
+@media(max-width: 768px){
+    .menu-navegacion{
+        flex-direction: column;
+        gap: 1em;
+    }
+    .principal{
+        flex-direction: column;
+        padding: 20px;
+    }
+    .principal h1{
+        font-size: 2em;
+    }
+    .contenedor-imagen{
+        max-width: 80%;
+    }
+    .contenido-pie{
+        grid-template-columns: repeat(2, 1fr);
+    }
+     .contenido-seccion{
+        flex-direction: column;
+    }
+}
+/*para dispositivos moviles*/
+@media(max-width: 480px){
+    .principal h1{
+        font-size: 1.8em;
+    }
+    .contenedor-imagen{
+        max-width: 100%;
+    }
+    .contenido-pie{
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .menu-navegacion{
+        gap: 0.5em;
+    }
+}
+/*seccion productos*/
+.seccion-productos{
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.seccion-productos h2{
+    font-size: 2em;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+.contenido-seccion{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 80%;
+}
+.imagen-seccion{
+    width: 80%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.imagen-seccion:hover{
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+.seccion-productos p{
+    font-size: 1.2em;
+    color: #555;
+    max-width: 600px;
+    margin: 0px auto;
+    line-height: 1.5;
+    text-align: justify;
+}
+/*estilo para el formulario*/
+.formulario{
+    max-width: 600px;
+    margin: 2em auto;
+    padding: 2em;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.contenedor-formulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.contenedor-formulario img{
+    width: 80%;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.contenedor-formulario img:hover{
+transform: scale(1.05);
+box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+.cajaGenero{
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+.campo{
+    margin-bottom: 1.5em;
+}
+.campo label{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+.campo input[type="text"],
+.campo input[type="email"],
+.campo input[type="tel"],
+.campo input[type="number"],
+.campo input[type="file"]{
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.campo button{
+    padding: 0.7em 1.5em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3;
+}
+.campo button:hover{
+    background-color: #3e8e41;
+}
